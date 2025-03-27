@@ -2,7 +2,7 @@ require 'appium_lib'
 
 
 caps = {
-  platformName: 'Mac',  #
+  platformName: 'Mac', 
   browserName: 'Chrome'
   
 }
@@ -24,11 +24,11 @@ begin
   links.each_with_index do |link, index|
     begin
       url = link.attribute('href')
-      if url && url.start_with?('http') # Solo abrir enlaces válidos
+      if url && url.start_with?('http')
         puts "➡️ Abriendo enlace #{index + 1}: #{url}"
         driver.get(url)
-        sleep 2 # Esperar que cargue la página
-        driver.navigate.back # Volver a la página principal
+        sleep 2
+        driver.navigate.back 
         sleep 2
       end
     rescue StandardError => e
